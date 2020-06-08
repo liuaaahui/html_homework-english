@@ -3,8 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML</title>
+    <style>
+        span{
+            padding: 30px;
+        }
+        .leftSp{
+            padding-left: 10px;
+        }
+        .infoInput{
+            margin-left: 20px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var button = document.getElementById("button");
+            button.onclick = function(){
+                var total = 0;
+                var text = "A model is a simplification and abstraction of the real world. A model is an expression of the system, process, thing or concept of research. Can be a physical entity; can be a certain graphic; or a mathematical expression.";
+                var answer1 = document.getElementById("answer1-1");
+                var answer2 = document.getElementById("answer1-2");
+                var answer3 = document.getElementById("answer1-3");
+                var answer4 = document.getElementById("answer1-4");
+                var answer5 = document.getElementsByName("answer2-1");
+                var answer6 = document.getElementsByName("answer2-2");
+                var answer7 = document.getElementsByName("answer3-1");
+                var answer8 = document.getElementsByName("answer3-2");
+                var answer9 = document.getElementsByName("answer4-1");
+                var answer10 = document.getElementsByName("answer4-2");
+                var answer11 = document.getElementById("answer5-1");
+                if(answer1.value === "Unified Modeling Language") total+=5;
+                if(answer2.value === "Encapsulation") total+=5;
+                if(answer3.value === "Inheritance") total+=5;
+                if(answer4.value === "Polymorphism") total+=5;
+                if(answer5[1].checked) total+=10;
+                if(answer6[0].checked) total+=10;
+                if(answer7[0].checked&&answer7[1].checked&&!answer7[2].checked&&answer7[3].checked) total+=10;
+                if(answer8[0].checked&&answer8[1].checked&&answer8[2].checked&&!answer8[3].checked) total+=10;
+                if(answer9[1].checked) total+=10;
+                if(answer10[0].checked) total+=10;
+                if(answer11.value === text) total+=20;
+                alert("提交成功，成绩为" + total);
+            }
+        }
+    </script>
 </head>
 <body>
-
+    <form method="post">
+        <h1>Unified Modeling Language Theory Test</h1>
+        <p>
+            <span class="leftSp">Test Subject: Unified Modeling Language</span>
+            <span>Time: 100 minute</span>
+            <span>Score: 100</span>
+        </p>
+        <p>
+            <span class="leftSp"><label for="className">Class:</label><input type="text" id="className" name="className" class="infoInput" required></span>
+            <span><label for="sutdentID">Student ID:</label><input type="text" id="sutdentID" name="sutdentID" class="infoInput" required></span>
+            <span><label for="studentName">Name:</label><input type="text" id="studentName" name="studentName" class="infoInput" required></span>
+        </p>
+        <section>
+            <h1>1、Fill in the blanks(5 points per space, 20 points total)</h1>
+            <p>
+                <label for="answer1-1">1.The full name of UML in Chinese is:</label>
+                <input type="text" name="answer1-1" id="answer1-1">
+            </p>
+            <p>
+                <label for="answer1-2">2.The most prominent feature of the object is:</label>
+                <input type="text" name="answer1-2" id="answer1-2">
+                <input type="text" name="answer1-3" id="answer1-3">
+                <input type="text" name="answer1-4" id="answer1-4">
+            </p>
+        </section>
+        <section>
+            <h1>2、Multiple choice question(10 points per space, 20 points total)</h1>
+            <p>
+               <label for="answer2-1">1.The relationship between UML and software engineering is:</label>
+               <p><input type="radio" name="answer2-1" id="answer2-1" value="A">(A) UML is softwareengineering</p>
+               <p><input type="radio" name="answer2-1" value="B">(B) UML participates in several stages of the software development process in software engineering</p>
+               <p><input type="radio" name="answer2-1" value="C">(C) UML has nothing to do with software engineering</p>
+               <p><input type="radio" name="answer2-1" value="D">(D) UML is part of software ebgineering</p>
+            </p>
+            <p>
+                <label for="answer2-2">2.Java language support:</label>
+                <p><input type="radio" name="answer2-2" id="answer2-2" value="A">(A) Single inheritance</p>
+                <p><input type="radio" name="answer2-2" value="B">(B) Multiple inheritance</p>
+                <p><input type="radio" name="answer2-2" value="C">(C) Single inheritance and multiple inheritance support</p>
+                <p><input type="radio" name="answer2-2" value="D">(D) Single inheritance and multiple inheritance are not support</p>
+            </p>
+        </section>
+        <section>
+            <h1>3、Multiple choice(10 points per space, 20 points total)</h1>
+            <p>
+                <label for="answer3-1">1.The granularity of the use case is divided into the following three:</label>
+                <p><input type="checkbox" name="answer3-1" id="answer3-1" value="A">(A) Overview level</p>
+                <p><input type="checkbox" name="answer3-1" value="B">(B) Demand level</p>
+                <p><input type="checkbox" name="answer3-1" value="C">(C) User target level</p>
+                <p><input type="checkbox" name="answer3-1" value="D">(D) Sub-function level</p>
+            </p>
+            <p>
+                <label for="answer3-2">2.The class diagram consists of which of the following three parts:</label>
+                <p><input type="checkbox" name="answer3-2" id="answer3-2" value="A">(A) Name</p>
+                <p><input type="checkbox" name="answer3-2" value="B">(B) Attribute</p>
+                <p><input type="checkbox" name="answer3-2" value="C">(C) Operation</p>
+                <p><input type="checkbox" name="answer3-2" value="D">(D) Function</p>
+            </p>
+        </section>
+        <section>
+            <h1>4、True or False(10 points per space, 20 points total)</h1>
+            <p>
+                <label for="answer4-1">1.Use case diagrams are only used to communicate and communicate with customers to determine demand。</label>
+                <input type="radio" id="answer4-1" name="answer4-1" value="true">√
+                <input type="radio" name="answer4-1" value="false">×
+            </p>
+            <p>
+                <label for="answer4-2">2.In the state diagram, the termination state allows any number of multiples in a state diagram。</label>
+                <input type="radio" id="answer4-2" name="answer4-2" value="true">√
+                <input type="radio" name="answer4-2" value="false">×
+            </p>
+        </section>
+        <section>
+            <h1>5、Short answer question(20 points per space, 20 points total)</h1>
+            <p>
+                <label for="answer5-1">1.Briefly describe what the model is and how it behaves？</label>
+                <p><textarea name="answer5-1" id="answer5-1" cols="90" rows="14"></textarea></p>
+            </p>
+        </section>
+        <section>
+            <button type="submit" id="button">Calculating score</button> 
+        </section>
+    </form>
 </body>
 </html>
+
